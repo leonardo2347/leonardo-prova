@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <h3 class="page-header"> Editar </h3>
+
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/primeira/">Home </a>
+            </li>
+            <li>
+                <i class="fa fa-laptop"></i> Editar </li>
+        </ol>
+    </div>
+</div>
+
+<div class="col-lg-6">
+    <section class="panel">
+        <div class="panel-body">
+            <form action="/primeira/produto/{{produto_id}}/editar/" method="POST">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="{{form.cliente.id_for_label}}">Cliente</label>
+                    {{form.cilente}}
+                </div>
+                <div class="form-group">
+                    <label for="{{form.categoria.id_for_label}}">Categoria</label>
+                    {{form.categoria}}
+                </div>
+                <div class="form-group">
+                    <label for="{{form.valor.id_for_label}}">valor</label>
+                    {{form.valor}}
+                </div>
+                
+
+
+                <button type="submit" class="btn btn-primary"> Enviar </button>
+                <a href="/primeira/produto/" class="btn btn-primary"> Voltar </a>
+            </form>
+        </div>
+    </section>
+</div>
+{% endblock %}

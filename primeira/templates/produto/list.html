@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Categoria</th>
+            <th>Valor</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for produto in produtos %}
+        <tr>
+            <td>{{produto.cliente}}</td>
+            <td>{{produto.categoria}}</td>
+            <td>{{produto.Valor}}</td>
+            
+            <td><a href="/primeira/produto/{{produto.id}}">Ver</a></td>
+            <td><a href="/primeira/produto/{{produto.id}}/editar/">Editar</a></td>
+            <td><a href="/primeira/produto/{{produto.id}}/delete/">Delete</a></td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h1>produtos: {{produtos | length}}</h1>
+{% endblock %}

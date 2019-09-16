@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1>Detalhes do produto</h1>
+<div>
+    <label>Cliente:</label>
+    {{produto.cliente}}
+</div>
+<div>
+    <label>Categoria:</label>
+    {{produto.categoria}}
+</div>
+<div>
+    <label>Valor:</label>
+    {{produto.valor}}
+</div>
+
+<h1>produto:{{produto_id}}</h1>
+
+{% endblock %}

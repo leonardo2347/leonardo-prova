@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h1>Novo Primeira</h1>
+
+<div class="row">
+    <div class="col-12">
+        <form accept="/Primeira/produto/create/" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="cliente">Cliente:</label>
+                {{form.cliente}}
+                {{form.cliente.errors}}
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoria:</label>
+                {{form.categoria}}
+                {{form.categoria.errors}}
+            </div>
+            <div class="form-group">
+                <label for="valor">Valor:</label>
+                {{form.valor}}
+                {{form.valor.errors}}
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Salvar</button>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
