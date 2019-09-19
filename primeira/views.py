@@ -8,7 +8,7 @@ def home(request):
 def produto_list(request):
     if (request.method == 'POST'):
         form = request.POST.get('select')  
-        produtos = Produto.objects.all().order_by(form)
+        produtos = Produto.objects.filter(categoria__icontains=form)
         return render(request, 'produto/list.html', {'produtos':produtos})
     else:
         produtos = Produto.objects.all()
@@ -51,4 +51,16 @@ def produto_delete(request, produto_id):
     
 
     
+
+
+
+
+
+
+
+
+
+
+
+
 

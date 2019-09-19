@@ -5,10 +5,13 @@ class Cliente(models.Model):
     matricula = models.CharField(max_length=11)
     idade = models.IntegerField()
 
+    def __str__(self):
+        return self.nome
+
 class Produto(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     categoria = models.CharField(max_length=11)
-    valor = models.CharField(max_length=1)
+    valor = models.IntegerField()
 
 class Carrinho_De_Compras(models.Model):
     supermercado = models.CharField(max_length=50)
